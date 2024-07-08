@@ -1,0 +1,48 @@
+server {
+
+	server_name solana-phantom.ratersapp.com;
+
+	root /var/www/html/PHANTOM-SOLANA-SANDBOX;
+	index index.php index.html;
+    	client_max_body_size 10M;
+
+        location /backend/ { 
+            try_files /backend/$uri /backend/$uri/ /backend/$uri/$1 /backend/siws.php =404;
+        }
+
+	location / {
+    	      try_files /frontend/$uri /frontend/$uri/ /frontend/index.html =404;
+	}
+
+
+    location ~ \.php$ {
+  
+	include snippets/fastcgi-php.conf;
+	
+	# With php-fpm (or other unix sockets):
+	  fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+	# With php-cgi (or other tcp sockets):
+	# fastcgi_pass 127.0.0.1:9000;
+    }
+
+    listen [::]:443 ssl ipv6only=on; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/solana-phantom.ratersapp.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/solana-phantom.ratersapp.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}server {
+    if ($host = solana-phantom.ratersapp.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+	listen 80;
+	listen [::]:80;
+
+	server_name solana-phantom.ratersapp.com;
+    return 404; # managed by Certbot
+
+
+}

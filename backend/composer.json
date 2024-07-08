@@ -1,0 +1,6 @@
+{
+    "require": {
+        "stephenhill/base58": "^1.1",
+        "carbondate/carbon": "^1.33"
+    }
+}
