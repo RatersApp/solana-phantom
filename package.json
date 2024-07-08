@@ -1,0 +1,70 @@
+{
+  "name": "@phantom/sandbox",
+  "version": "1.0.0",
+  "description": "Phantom<=>Solana sandbox.",
+  "license": "MIT",
+  "main": "src/index.tsx",
+  "dependencies": {
+    "@craco/craco": "^7.1.0",
+    "@noble/ed25519": "^2.1.0",
+    "@solana/spl-token": "^0.4.7",
+    "@solana/web3.js": "^1.93.0",
+    "assets": "^3.0.1",
+    "base58-js": "^2.0.0",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "process": "^0.11.10",
+    "react-app-rewired": "^2.2.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "ts-import-plugin": "^3.0.0",
+    "typescript": "^5.5.2",
+    "url": "^0.11.3"
+  },
+  "homepage": "https://solana-phantom.ratersapp.com/",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/styled-components": "^5.1.34",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "styled-components": "^6.1.11",
+    "superstruct": "^1.0.4",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-app-rewired start ",
+    "build": "react-app-rewired build ",
+    "test": "react-app-rewired test ",
+    "eject": "react-app-rewired eject "
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "browserify": {
+    "transform": [
+      "esnext"
+    ]
+  }
+}
