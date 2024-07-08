@@ -632,9 +632,6 @@ const useProps = (): Props => {
 
   }, [setConnection, createLog]);
 
-
-
-  
   return {
     publicKey: provider?.publicKey || null,
     connectedMethods,
